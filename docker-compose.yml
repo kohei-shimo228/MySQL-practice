@@ -1,0 +1,8 @@
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - ./world.sql:/docker-entrypoint-initdb.d/world.sql
