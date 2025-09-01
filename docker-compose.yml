@@ -2,7 +2,9 @@ services:
   db:
     image: mysql:latest
     restart: always
+    ports:
+      - '3006:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+      - MYSQL_ROOT_PASSWORD:password
     volumes:
       - ./world.sql:/docker-entrypoint-initdb.d/world.sql
